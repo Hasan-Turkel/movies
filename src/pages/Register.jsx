@@ -12,19 +12,19 @@ const Register = () => {
             Sign Up
           </h2>
           <div>
-            <input name="floating_text" type="text" required />
+            <inpu  className="peer" name="floating_text" type="text" required />
             <label htmlFor="floating_text">First Name</label>
           </div>
           <div>
-            <input name="floating_text" type="text" required />
+            <input  className="peer" name="floating_text" type="text" required />
             <label htmlFor="floating_text">Last Name</label>
           </div>
           <div>
-            <input name="floating_email" type="email" />
+            <input  className="peer" name="floating_email" type="email" />
             <label htmlFor="floating_email">Email</label>
           </div>
           <div>
-            <input name="floating_password" type="password" />
+            <input  className="peer" name="floating_password" type="password" />
             <label htmlFor="floating_password">Password</label>
           </div>
           <button className="btn-danger" type="submit">Register</button>

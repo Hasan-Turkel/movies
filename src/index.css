@@ -14,7 +14,7 @@
   }
 }
 
-/** component/class bazında default olarak vermek istediğimiz stilleri component layer'da veriyoruz */
+
 @layer components {
   .btn-danger {
     @apply focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 rounded-lg text-lg px-5 py-2.5 mr-2 mb-2 w-[300px] mt-[15px] dark:bg-red-main dark:hover:bg-red-700 dark:focus:ring-red-900;
