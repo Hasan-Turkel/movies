@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { MovieContext } from "../context/MovieContext";
-import MovieCard from "../components/MovieCard";
 import { AuthContext } from "../context/AuthContext";
 import { toastWarnNotify } from "../helpers/ToastNotify";
+import MovieCard from "../components/MovieCard";
 
 const API_KEY = process.env.REACT_APP_TMDB_KEY;
 const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=`;
