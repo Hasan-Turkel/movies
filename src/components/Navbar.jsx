@@ -1,14 +1,17 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import avatar from "../assets/icons/avatar.png";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
+import Switch from "./Switch";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Navbar() {
-  const currentUser = { displayName: "felix franko" };
+  const { logOut, currentUser } = useContext(AuthContext);
+  // const currentUser = { displayName: "felix franko" };
   return (
     <>
       <Disclosure
@@ -24,7 +27,8 @@ export default function Navbar() {
               {currentUser && (
                 <h5 className="mr-2 capitalize">{currentUser?.displayName}</h5>
               )}
-             
+              <Switch />
+              {/* Profile dropdown */}
               <Menu as="div" className="relative ml-3">
                 <div>
                   <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
@@ -34,6 +38,7 @@ export default function Navbar() {
                       className="h-8 w-8 rounded-full"
                       src={currentUser?.photoURL || avatar}
                       alt="user"
+                      referrerPolicy="no-referrer"
                     />
                   </Menu.Button>
                 </div>
@@ -80,6 +85,7 @@ export default function Navbar() {
                             active ? "bg-gray-100" : "",
                             "block px-4 py-2 text-sm text-gray-700 cursor-pointer"
                           )}
+                          onClick={() => logOut()}
                         >
                           Log out
                         </span>
